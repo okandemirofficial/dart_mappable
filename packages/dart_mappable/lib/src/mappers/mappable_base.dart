@@ -5,6 +5,10 @@ mixin MappableBase<T> {
 
   Map<String, dynamic> toMap();
 
+  T fromMap(Map<String, dynamic> map);
+
+  T fromJson(String json);
+
   @override
   String toString();
 
