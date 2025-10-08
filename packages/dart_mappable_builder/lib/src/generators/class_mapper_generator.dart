@@ -10,6 +10,7 @@ import 'mixins/copywith_mixin.dart';
 import 'mixins/decoding_mixin.dart';
 import 'mixins/encoding_mixin.dart';
 import 'mixins/equals_mixin.dart';
+import 'mixins/from_map_mixin.dart';
 import 'mixins/tostring_mixin.dart';
 
 /// Generates code for a specific class
@@ -19,7 +20,8 @@ class ClassMapperGenerator extends MapperGenerator<TargetClassMapperElement>
         EncodingMixin,
         CopyWithMixin,
         EqualsMixin,
-        ToStringMixin {
+        ToStringMixin,
+        FromMapMixin {
   ClassMapperGenerator(super.element);
 
   @override
@@ -93,6 +95,8 @@ class ClassMapperGenerator extends MapperGenerator<TargetClassMapperElement>
       generateCopyWithMixin(),
       generateToStringMixin(),
       generateEqualsMixin(),
+      generateFromMapMixin(),
+      generateFromJsonMixin(),
     ]);
     output.write('}');
   }
