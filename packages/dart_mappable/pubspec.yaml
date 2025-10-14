@@ -23,7 +23,11 @@ dependencies:
 
 dev_dependencies:
   build_runner: ^2.4.14
-  dart_mappable_builder: ^4.6.1
+  dart_mappable_builder:
+    git:
+      url: https://github.com/okandemirofficial/dart_mappable.git
+      ref: personal
+      path: packages/dart_mappable_builder
   lints: ^5.0.0
   test: ^1.25.10
 
