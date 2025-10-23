@@ -58,5 +58,15 @@ extension InitializerExtension<T extends TargetClassMapperElement>
       '    return _instance!;\n'
       '  }',
     );
+
+    ///
+    /// Add ensureInitialized to the output
+    ///
+    output.write('''
+    @override
+    void ensureInitialized() {
+     ${element.mapperName}.ensureInitialized();
+    }
+    ''');
   }
 }
