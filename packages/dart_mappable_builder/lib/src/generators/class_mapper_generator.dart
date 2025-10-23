@@ -9,6 +9,7 @@ import 'generator.dart';
 import 'mixins/copywith_mixin.dart';
 import 'mixins/decoding_mixin.dart';
 import 'mixins/encoding_mixin.dart';
+import 'mixins/ensure_initialized_mixin.dart';
 import 'mixins/equals_mixin.dart';
 import 'mixins/tostring_mixin.dart';
 
@@ -19,7 +20,8 @@ class ClassMapperGenerator extends MapperGenerator<TargetClassMapperElement>
         EncodingMixin,
         CopyWithMixin,
         EqualsMixin,
-        ToStringMixin {
+        ToStringMixin,
+        EnsureInitializedMixin {
   ClassMapperGenerator(super.element);
 
   @override
@@ -90,6 +92,7 @@ class ClassMapperGenerator extends MapperGenerator<TargetClassMapperElement>
 
     generateEncoderMixin(output);
     output.writeAll([
+      generateEnsureInitialized(),
       generateCopyWithMixin(),
       generateToStringMixin(),
       generateEqualsMixin(),

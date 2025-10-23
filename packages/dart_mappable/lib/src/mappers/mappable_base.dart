@@ -1,6 +1,8 @@
 import '../../dart_mappable.dart';
 
 mixin MappableBase<T> {
+  void ensureInitialized();
+
   String toJson();
 
   Map<String, dynamic> toMap();
