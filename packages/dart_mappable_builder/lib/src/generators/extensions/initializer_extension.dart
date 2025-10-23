@@ -10,16 +10,6 @@ extension InitializerExtension<T extends TargetClassMapperElement>
         if (_instance == null) {   
     ''');
 
-    ///
-    /// Add ensureInitialized to the output
-    ///
-    output.write('''
-    @override
-    void ensureInitialized() {
-     ${element.mapperName}.ensureInitialized();
-    }
-    ''');
-
     var typesConfigs = element.customTypes;
     if (typesConfigs.isNotEmpty) {
       for (var t in typesConfigs) {
